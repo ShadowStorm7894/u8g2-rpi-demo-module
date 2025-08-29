@@ -7,7 +7,7 @@ This is an module based off of [This](https://github.com/ribasco/u8g2-rpi-demo) 
 1. [Description](#description)
 1. [Project Dependencies](#project-dependencies)
 1. [Features](#features)
-1. [Sample Usage](#sample-usage)
+1. [How to use](#how-to-use)
 
 # Description
 
@@ -25,3 +25,6 @@ I may turn it into a proper library in future, no guarantees.
 
 - SPI Hardware/Software implementations
 - I2C will **not** be supported for the current scope of this project
+
+# How To Use
+
