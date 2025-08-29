@@ -7,7 +7,7 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin CACHE PATH "Single Directory for all Libraries")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin CACHE PATH "Single Directory for all Executables")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin CACHE PATH "Single Directory for all static libraries")
-set(LIB_DIR ${CMAKE_SOURCE_DIR}/lib)
+set(LIB_DIR ${CMAKE_SOURCE_DIR}/src/lib)
 
 # Obtain U8G2 Library (REQUIRED)
 include("./cmake/GetU8G2.cmake")
@@ -39,7 +39,7 @@ message(STATUS "[U8G2] U8G2_LIBRARIES = ${U8G2_LIBRARIES}")
 message(STATUS "[WIRING-PI] WIRINGPI_LIBRARIES = ${WIRINGPI_LIBRARIES}")
 message(STATUS "[WIRING-PI] WIRINGPI_INCLUDE_DIR = ${WIRINGPI_INCLUDE_DIR}")
 
-add_executable(u8g2demo main.h main.cpp ${U8G2_HEADER_FILES} ${U8G2_SRC_FILES} spi.cpp spi.h u8g2_hal_rpi.cpp u8g2_hal_rpi.h u8g2_hal_rpi_i2c.cpp u8g2_hal_rpi_i2c.h)
+add_executable(u8g2demo src/main.cpp ${U8G2_SRC_FILES} src/spi.cpp src/u8g2_hal_rpi.cpp)
 
 include_directories(${LIB_DIR}/bcm2835/src)
 include_directories(${WIRINGPI_INCLUDE_DIR} ${U8G2_INCLUDE_DIR})

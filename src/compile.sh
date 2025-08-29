@@ -93,7 +93,7 @@ then
 fi
 
 CMAKE_BIN_PATH=$(which cmake)
-CMAKE_FLAGS="-DCMAKE_BUILD_TYPE=${BUILD_TYPE} ${CC_FLAGS} -H. -B${BUILD_DIR}"
+CMAKE_FLAGS="-DCMAKE_BUILD_TYPE=${BUILD_TYPE} ${CC_FLAGS} -H. -S ../ -B${BUILD_DIR}"
 CMAKE_CMD="${CMAKE_BIN_PATH} ${CMAKE_FLAGS}"
 
 echo "==================================================="

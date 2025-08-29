@@ -1,4 +1,4 @@
-set(TOOLS_DIR_PATH ${CMAKE_CURRENT_LIST_DIR}/../tools)
+set(TOOLS_DIR_PATH ${CMAKE_CURRENT_LIST_DIR}/../src/tools)
 set(RPI_TOOLCHAIN_PATH "${TOOLS_DIR_PATH}/rpi" CACHE PATH "The path of the Raspberry Pi Toolchain")
 
 message(STATUS "[FIND-TOOLCHAIN] Search Path = ${RPI_TOOLCHAIN_PATH}")

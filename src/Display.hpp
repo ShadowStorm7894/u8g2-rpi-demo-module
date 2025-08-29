@@ -7,7 +7,7 @@
 #include <string>
 
 #include "u8g2_hal_rpi.h"
-#include "u8g2_hal_rpi_i2c.h"
+//#include "u8g2_hal_rpi_i2c.h"
 
 using namespace std;
 

@@ -2,7 +2,5 @@
 
 int main() {
     TextOutput LCD;
-    LCD.SetTemp(100);
-    LCD.SendTemp();
 
 }

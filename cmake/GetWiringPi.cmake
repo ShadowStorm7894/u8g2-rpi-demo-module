@@ -3,9 +3,9 @@ set(WIRINGPI_DIR ${LIB_DIR}/wiringPi)
 
 # Setup wiring pi library
 if (NOT EXISTS ${WIRINGPI_DIR} OR (NOT EXISTS ${WIRINGPI_DIR}/VERSION))
-    message(STATUS "[WIRING-PI] Not yet existing: ${WIRINGPI_DIR}, Working directory: ${CMAKE_SOURCE_DIR}")
+    message(STATUS "[WIRING-PI] Not yet existing: ${WIRINGPI_DIR}, Working directory: ${CMAKE_SOURCE_DIR}/src")
     message(STATUS "[WIRING-PI] Downloading WiringPi")
-    message(STATUS "[WIRING-PI] SOURCE_DIR = ${CMAKE_SOURCE_DIR}/lib/wiringPi")
+    message(STATUS "[WIRING-PI] SOURCE_DIR = ${CMAKE_SOURCE_DIR}/src/lib/wiringPi")
 
     file(DOWNLOAD https://github.com/ribasco/wiringPi/archive/master.zip ${LIB_DIR}/wiringPi.zip SHOW_PROGRESS)
 
@@ -39,8 +39,8 @@ endif ()
 set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
 find_package(Threads REQUIRED)
 
-file(GLOB WPI_SRC_FILES "lib/wiringPi/wiringPi/*.c")
-file(GLOB WPI_HEADER_FILES "lib/wiringPi/wiringPi/*.h")
+file(GLOB WPI_SRC_FILES "src/lib/wiringPi/wiringPi/*.c")
+file(GLOB WPI_HEADER_FILES "src/lib/wiringPi/wiringPi/*.h")
 file(COPY ${WPI_HEADER_FILES} DESTINATION ${PROJECT_BINARY_DIR}/install/wiringPi/include)
 
 # Create our library target
@@ -53,7 +53,7 @@ set_target_properties(wiringPi
         )
 
 # be sure to include the current source directory for header files
-target_include_directories(wiringPi PRIVATE ${CMAKE_SOURCE_DIR}/lib/wiringPi/wiringPi)
+target_include_directories(wiringPi PRIVATE ${CMAKE_SOURCE_DIR}/src/lib/wiringPi/wiringPi)
 target_link_libraries(wiringPi ${CMAKE_THREAD_LIBS_INIT} crypt m rt)
 
 set(WIRINGPI_LIBRARIES "${PROJECT_BINARY_DIR}/install/wiringPi/lib/${CMAKE_SHARED_LIBRARY_PREFIX}wiringPi${CMAKE_SHARED_LIBRARY_SUFFIX}")

@@ -6,7 +6,7 @@ if (NOT EXISTS ${U8G2_DIR})
     set(U8G2_ARCHIVE_FILE_PATH ${LIB_DIR}/${U8G2_ARCHIVE_FILE_NAME})
 
     message(STATUS "[U8G2] Downloading to ${U8G2_ARCHIVE_FILE_PATH}")
-    message(STATUS "[U8G2] Not yet existing: ${U8G2_DIR}, Working directory: ${CMAKE_SOURCE_DIR}")
+    message(STATUS "[U8G2] Not yet existing: ${U8G2_DIR}, Working directory: ${CMAKE_SOURCE_DIR}/src")
     file(DOWNLOAD https://github.com/olikraus/u8g2/archive/master.zip ${U8G2_ARCHIVE_FILE_PATH} SHOW_PROGRESS)
 
     if (NOT EXISTS ${U8G2_ARCHIVE_FILE_PATH})
